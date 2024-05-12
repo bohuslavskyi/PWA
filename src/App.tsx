@@ -64,8 +64,7 @@ function App() {
 
       return () => {
           if (videoRef.current && videoRef.current.srcObject) {
-              let tracks = (videoRef.current.srcObject as MediaStream).getTracks();
-              tracks.forEach(track => track.stop());
+              (videoRef.current.srcObject as MediaStream).getTracks().forEach(track => track.stop());
           }
       };
   }, []);
